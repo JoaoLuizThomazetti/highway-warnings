@@ -31,8 +31,9 @@ function App() {
 
   const handleMapClick = async (latlng) => {
     try {
+      const apiUrl = import.meta.env.VITE_API_URL;
       const response = await fetch(
-        `http://127.0.0.1:8000/api/nearest_state_highway?lat=${latlng.lat}&lng=${latlng.lng}`
+        `${apiUrl}/api/nearest_state_highway?lat=${latlng.lat}&lng=${latlng.lng}`
       );
       if (!response.ok) {
         throw new Error("API request failed");
