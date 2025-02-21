@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   highway-warnings:
-    image: highway-warnings
+    image: joaoluizst/highway-warnings:latest
     restart: unless-stopped
     ports:
       - "3103:3103"

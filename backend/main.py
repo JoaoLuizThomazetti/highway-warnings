@@ -20,7 +20,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],  # origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -37,7 +37,8 @@ async def get_nearest_state_highway(lat: float = Query(...), lng: float = Query(
     highway_ref = nearest_highway.ref
     highway_name = nearest_highway.name
 
-    # ==> TO DISCOVER THE NEAREST COORD OF THE POINT
+    # TODO IMPLEMENT ON FRONT TO DISCOVER THE NEAREST COORD OF THE CLICKED POINT
+
     # highway_geom = nearest_highway.geometry
     # distance_along = highway_geom.project(clicked_point_proj)
     # km_distance = distance_along / 1000.0
